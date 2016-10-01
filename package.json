@@ -1,6 +1,6 @@
 {
   "name": "ember-grab-bag-controls",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "When developing visual projects like games, it's handy to have controls for the on-screen entities (e.g. size, speed, etc). This addon component takes an array of object properties and generates corresponding inputs (e.g. range inputs).",
   "directories": {
     "doc": "doc",
