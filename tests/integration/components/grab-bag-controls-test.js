@@ -49,3 +49,35 @@ test('inputs are displayed', function(assert) {
   assert.equal(scaleInput.attr('max'), 3.0);
   assert.equal(scaleLabel.text(), 'Scale');
 });
+
+test('updating input calls action', function(assert) {
+  assert.expect(2);
+
+  this.on('updateGrabBag', (name, event) => {
+    assert.equal(name, 'period');
+    assert.equal(event.target.value, 8.0);
+  });
+
+  this.set('controls',
+    [
+      { name: 'period',
+        displayName: 'Period',
+        value: 4.0,
+        step: 1.0,
+        min: 2.0,
+        max: 10.0
+      }
+    ]
+  );
+
+  this.render(hbs`{{
+    grab-bag-controls
+    controls=controls
+    updateGrabBag=(action "updateGrabBag")
+  }}`);
+
+  let input = this.$('input').first();
+
+  input.val(8.0);
+  input.trigger('input');
+});
