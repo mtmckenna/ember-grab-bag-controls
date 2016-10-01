@@ -1,0 +1,21 @@
+{{#each controls as |control|}}
+<label for={{control.name}}>{{control.displayName}}</label>
+  <input
+  oninput={{action (action updateGrabBag control.name)}}
+  type="range"
+  name={{control.name}}
+  value={{control.value}}
+  defaultValue={{control.value}}
+  step={{control.step}}
+  min={{control.min}}
+  max={{control.max}}
+  />
+{{/each}}
+
+<br />
+
+<ul>
+{{#each controls as |control|}}
+<li>{{control.displayName}}: {{control.value}}</li>
+{{/each}}
+</ul>

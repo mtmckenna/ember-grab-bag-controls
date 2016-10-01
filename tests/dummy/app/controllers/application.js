@@ -1,20 +1,3 @@
-# ember-grab-bag-controls
-
-When developing visual projects like games, it's handy to have controls for the on-screen entities (e.g. size, speed, etc). This addon component takes an array of object properties and generates corresponding inputs (e.g. range inputs).
-
-## Installation
-
-`ember install ember-grab-bag-controls`
-
-## Usage
-
-```
-{{!-- templates/application.hbs --}}
-{{grab-bag-controls controls=controls updateGrabBag=(action "updateGrabBag")}}
-```
-
-```
-// controllers/application.js
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
@@ -49,4 +32,3 @@ export default Ember.Controller.extend({
     }
   }
 });
-```
