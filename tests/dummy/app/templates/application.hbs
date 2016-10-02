@@ -1,3 +1,10 @@
 Pizza
 
 {{grab-bag-controls controls=controls updateGrabBag=(action "updateGrabBag")}}
+
+<ul>
+
+{{#each controls as |control|}}
+<li>{{control.displayName}}: {{control.value}}</li>
+{{/each}}
+</ul>
